@@ -1,0 +1,19 @@
+{% extends "allyourbase.html" %}
+{% block title %}:: Manage{% endblock %}
+{% block content %}
+{% if message %}<div id='message'>{{ message }}</div>{% endif %}
+<form action='/manage' method='post'>
+Email Address:<input type='text' name='email' /><br />
+<input type='submit' value='Create Image' />
+</form>
+<div id='list'>
+Addresses:
+<ul>
+{% for email in emails %}
+  <li>{% if email.activated %}<img src='/image?i={{ email.key }}' />{% else %}{{ email.email }} -- <b>Not Activated</b>{% endif %} (<a href='/delete?i={{ email.key }}'>delete</a>){%if email.activated %}<br />
+<span style='font-family: courier, lucinda, monospaced'>&lt;img src="http://stringimage.appspot.com/image?i={{email.key}}" /&gt;</span><br />
+{% endif %}</li>
+{% endfor %}
+</ul>
+</div>
+{% endblock %}

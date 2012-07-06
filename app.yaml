@@ -1,0 +1,12 @@
+application: stringimage
+version: 1
+runtime: python
+api_version: 1
+
+handlers:
+    - url: /(.*\.(png|ico))
+      static_files: \1
+      upload: /(.*\.(png|ico))
+      
+    - url: /.*
+      script: main.py

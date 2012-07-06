@@ -1,0 +1,14 @@
+<html>
+<head>
+<title>String Image {% block title %} :: Email Protection {% endblock %}</title>
+</head>
+<body>
+<div id='header'>
+<h1>String Image</h1>
+<h2>Protecting your email, one image at a time</h2>
+<div>{{ greeting }} (<a href="{{ url }}">{{ link }}</a>)</div>
+</div>
+<div id='content'>{% block content %}{% endblock %}</div>
+<div id='footer'>&copy; 2008 Brian A. Hartvigsen <img src='http://stringimage.appspot.com/image?i=agtzdHJpbmdpbWFnZXILCxIFRW1haWwYUQw' /></div>
+</body>
+</html>

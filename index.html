@@ -1,0 +1,15 @@
+{% extends "allyourbase.html" %}
+{% block content %}
+<p>This website was born in order to allow me to do something similar to what facebook offered, where you could protect your email address by turning it into an image.  I decided to make use of Google Apps Engine in order to facilitate fast development and robust deployment.  We'll see how well this holds up :-D</p>
+<p><b>How does this work?</b><br />
+<ol>
+<li>You sign into your Google Account.</li>
+<li>You enter an email address you want protected.</li>
+<li>We send you a validation email to make sure the email address is legit, all emails come from <img src='http://stringimage.appspot.com/image?i=agtzdHJpbmdpbWFnZXILCxIFRW1haWwYUQw' /></li>
+<li>You click the validation link in the email</li>
+<li>The email address is magically transformed into an image</li>
+<li>We purge the string version of your email address and only keep the image data!</li>
+</ol>
+</p>
+<p>Right now the major draw-back is that this breaks presentation for the visually impaired, but I'm hoping to create something to get around that too :-D</p>
+{% endblock %}
